@@ -1,5 +1,5 @@
 # Byte-compiled / optimized / DLL files
-bhaskar/
+env/
 vitray/__pycache__/
 .__pycache__/
 /__pycache__/
@@ -110,9 +110,9 @@ celerybeat.pid
 .env/
 .venv
 vitray/env/
-bhaskar/
+env/
 venv/
-bhaskar/
+env/
 env.bak/
 venv.bak/
 
