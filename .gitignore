@@ -110,9 +110,9 @@ celerybeat.pid
 .env/
 .venv
 vitray/env/
-env/
+bhaskar/
 venv/
-ENV/
+bhaskar/
 env.bak/
 venv.bak/
 
