@@ -1,5 +1,5 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+vitray/__pycache__/
 .__pycache__/
 /__pycache__/
 *.py[cod]
@@ -108,6 +108,7 @@ celerybeat.pid
 # Environments
 .env/
 .venv
+vitray/env/
 env/
 venv/
 ENV/
