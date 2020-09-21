@@ -16,9 +16,11 @@ class categaries(models.Model):
 class productimage(models.Model):
     product_id = models.AutoField()
     productimage_id = models.AutoField()
-    productimage = models.Avg
+    productimage = models.ImageField()
 
-# Create your models here.
+class price(models.Model):
+     product_id = models.AutoField()
+     product_price = models.AutoField()
 # comment
 # comment
 # comment
