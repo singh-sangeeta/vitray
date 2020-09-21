@@ -1,7 +1,9 @@
-import product
 from django.db import models
 import users
 from products.models import products
+from django.db import transaction
+from django.core.validators import MinValueValidator, MaxValueValidator
+from datetime import datetime, timedelta
 
 class cart(models.model):
     user_name = models.ForeignKey(users, null=True,blank=True)
@@ -11,7 +13,29 @@ class cart(models.model):
     date_deleted = models.DateField()
     date_updated = models.DateField()
 
-class Item(models.Model):
-    item = models.ForeignKey(product, null=True)
-    cart = models.ForeignKey(cart, null=True)
-    quantity = models.PositiveIntegerField()
+class Order(models.Model):
+    email = models.EmailField()
+
+class Product(models.Model):
+    # ...
+    pass
+
+class OrderProduct(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+
+
+class coupens(models.Model):
+    code = models.CharField(max_length=10, unique=True, blank=True)
+    valid_from = models.DateTimeField(default=datetime.now(), blank=True)
+    valid_to = models.DateTimeField(default=compute_default_to)
+    discount = models.IntegerField(default=15, validators=[MinValueValidator(0), MaxValueValidator(100)])
+
+    active = models.BooleanField(default=True)
+
+class Address(models.Model):
+    street = models.TextField()
+    city = models.TextField()
+    province = models.TextField()
+    code = models.TextField()
