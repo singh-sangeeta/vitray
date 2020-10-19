@@ -1,2 +1,1 @@
 # vitray
-# vitray-frontend
