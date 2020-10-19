@@ -1,2 +1,2 @@
 # vitray
-# vitray-fronten
+# vitray-frontend
